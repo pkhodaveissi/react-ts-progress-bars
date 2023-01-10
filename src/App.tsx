@@ -1,17 +1,10 @@
 import ProgressBar from "./components/progress-bar";
-
+import withMockProgress from "./components/progress-bar/withMockProgress";
+const WithMockProgressBar = withMockProgress(ProgressBar, 100);
 export default function App() {
   return (
     <div>
-      <ProgressBar
-        label="1st"
-        visualParts={[
-          {
-            percentage: 20,
-            color: "purple"
-          }
-        ]}
-      />
+      <WithMockProgressBar label="1st" percentage={1} color="purple" />
     </div>
   );
 }
