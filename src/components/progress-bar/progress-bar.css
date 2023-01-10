@@ -7,7 +7,7 @@
 
 .progressVisualPart {
   /* Number of the seconds for complete animation */
-  transition: width 2s;
+  transition: width 2s linear;
 }
 
 .progressLabel {
