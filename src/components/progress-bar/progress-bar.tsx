@@ -1,6 +1,7 @@
+import React from "react";
 import "./progress-bar.css";
 
-export type ProgressBarProps = {
+export type ProgressBarProps = React.HTMLProps<"div"> & {
   label: string;
   backgroundColor?: string;
   percentage: number;
@@ -11,7 +12,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   label,
   backgroundColor = "#eeeeee",
   percentage = 0,
-  color = "red"
+  color = "red",
+  style
 }) => {
   if (percentage < 0 || percentage > 100) {
     throw new Error("Percentage not in valid range");
@@ -29,7 +31,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
         <div
           style={{
             width: `${percentage}%`,
-            backgroundColor: color
+            backgroundColor: color,
+            ...style
           }}
           className="progressVisualPart"
         />

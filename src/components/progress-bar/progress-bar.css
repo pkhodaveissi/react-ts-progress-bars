@@ -5,11 +5,6 @@
   margin: 20px 0;
 }
 
-.progressVisualPart {
-  /* Number of the seconds for complete animation */
-  transition: width 2s linear;
-}
-
 .progressLabel {
   /* Nothing here, move along */
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
