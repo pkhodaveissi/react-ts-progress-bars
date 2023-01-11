@@ -10,6 +10,10 @@ export default function App() {
       <QueueManager concurrentItems={5}>
         {({ currentQueue, addItem, removeItem, waitingList }) => (
           <>
+            <button onClick={() => addItem(new Date().toISOString())}>
+              Add new progress bar{" "}
+              {waitingList > 0 && `on wait: ${waitingList}`}
+            </button>
             {currentQueue.map((item) => (
               <WithMockProgressBar
                 key={item}
@@ -19,10 +23,6 @@ export default function App() {
                 onFinish={() => removeItem(item)}
               />
             ))}
-            <button onClick={() => addItem(new Date().toISOString())}>
-              Add new progress bar{" "}
-              {waitingList > 0 && `on wait: ${waitingList}`}
-            </button>
           </>
         )}
       </QueueManager>
