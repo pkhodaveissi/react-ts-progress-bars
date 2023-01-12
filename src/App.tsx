@@ -11,8 +11,7 @@ export default function App() {
         {({ currentQueue, addItem, removeItem, waitingList }) => (
           <>
             <button onClick={() => addItem(new Date().toISOString())}>
-              Add new progress bar{" "}
-              {waitingList > 0 && `on wait: ${waitingList}`}
+              Add new progress bar {!!waitingList && `on wait: ${waitingList}`}
             </button>
             {currentQueue.map((item) => (
               <WithMockProgressBar
