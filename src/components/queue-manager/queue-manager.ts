@@ -21,12 +21,12 @@ const QueueManager: React.FC<QueueManagerProps> = ({
   const removeItem = (itemToRemove: string) => {
     setQueue((queue) => [...queue.filter((item) => item !== itemToRemove)]);
   };
-  console.log("shit", queue);
+  const waitingList = queue.length - concurrentItems;
   return children({
     addItem,
     removeItem,
     currentQueue: queue.slice(0, concurrentItems),
-    waitingList: queue.length - concurrentItems
+    waitingList: waitingList > 0 ? waitingList : 0
   });
 };
 
