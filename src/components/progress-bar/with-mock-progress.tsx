@@ -29,8 +29,7 @@ const withMockProgress = (
     }, stepIntervalMs);
 
     return () => intervalId && clearInterval(intervalId);
-  }, []);
-  console.log(percentage);
+  }, [onFinish]);
   return component({
     percentage,
     style: { transition: `width ${stepIntervalMs / 1000}s linear` },
